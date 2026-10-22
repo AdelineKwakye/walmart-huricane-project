@@ -8,6 +8,7 @@
 
 - **Adeline** - I want to improve my data cleaning as well as my overall data science skills so that I’ll be able to apply them in other settings.
 - **Amilyn** - I want to have a deeper understanding of the topics this project will cover as well as be able to understand every step thoroughly, especially for the presentation aspect.
+- **Vi** - I want to be able to build data engineering skills, specifically pertaining to data cleaning and transformation, to apply towards a larger context
 
 ### c. What limits our time?
 
@@ -20,6 +21,11 @@
   1. I have an Independent Research project I am working on for the entire semester, limiting my time during the weekdays (usually done with that lab for the day by 5pm). Anytime after 5pm on most days, I can find a time to make meetings work.
   2. I have in-person weekly meetings on Fridays for that research I described above (2-3pm) along with a fellow position I hold in my major department (meeting time for this is still being figured out).
   3. Sundays I have a chapter meeting for my sorority from 5-6pm.
+ 
+- **Vi:**
+  1. I have work on Tuesday 10-2pm, Friday 3-7pm, and Sunday 9-1pm
+  2. I have a chapter meeting for Theta Tau every Sunday at 5-6pm, but anytime after that is free for me.
+  3. I have a very long class on Thursdays from 6-8:30pm, but sometimes we end early!
 
 ### d. What to avoid?
 
@@ -29,29 +35,30 @@
 # 2. Who does what
 
 - Adeline will be the notebook owner.
-- Adeline: Data Cleaning + decision log, Questions 1 and 2; whoever finishes first works on question 5.
-- Amilyn: Weather API + join, Questions 3 and 4; whoever finishes first works on question 5.
+- Adeline: Data Cleaning + decision log, Questions 1 and 2 with Vi. Reviewing Questions 3, 4, and 5
+- Amilyn: Weather API + join, Questions 3 and 4. Reviewing Questions 1, 2, and 5
+- Vi: Data Cleaning + decision log, Questions 1 and 2 with Adeline. Question 5. Reviewing Questions 3 and 4
 
 # 3. Question Owners
 
 - **Question 1 Owner**
-  - Adeline
+  - Adeline + Vi
 - **Question 1 Reviewer**
-  - Amilyn
+  - Amilyn + Vi
 - **Question 2 Owner**
-  - Adeline
+  - Adeline + Vi
 - **Question 2 Reviewer**
-  - Amilyn
+  - Amilyn 
 - **Question 3 Owner**
   - Amilyn
 - **Question 3 Reviewer**
-  - Adeline
+  - Adeline + Vi
 - **Question 4 Owner**
   - Amilyn
 - **Question 4 Reviewer**
-  - Adeline
+  - Adeline + Vi
 - **Question 5 Owner**
-  - Adeline + Amilyn
+  - Vi
 - **Question 5 Reviewer**
   - Adeline + Amilyn
 
