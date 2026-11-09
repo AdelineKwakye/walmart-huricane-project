@@ -54,6 +54,6 @@ All cleaning decisions were tracked through a decision log. The dataset was sani
 ---
 
 ## 5. Weather API
-To evaluate spatial vulnerability, store latitude and longitude coordinates were matched against historical weather observations using the **Open-Meteo Historical Weather API** (`https://archive-api.open-meteo.com/v1/archive`). Daily maximum wind speed and total precipitation were retrieved across Florida store locations for September 1–30, 2024, enabling multi-factor storm impact correlations.
+To evaluate spatial vulnerability, store latitude and longitude coordinates were matched against historical weather observations using the **Open-Meteo Historical Weather API** (`https://archive-api.open-meteo.com/v1/archive`). Daily maximum wind speed and total precipitation were retrieved across Florida store locations for September 1–30, 2024.
 
 
