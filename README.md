@@ -25,7 +25,7 @@ This project analyzes sales data from Walmart stores in Florida before and durin
 * **Top 5 Surging Merchandise Categories**: breakfast, emergency, entertainment, alcoholic beverages, and health. Breakfast had the highest relative surge with a 5.15 surge multiple ( +415.45%), while emergency had the highest absolute volume surge (+186.8%).
 * A rise in sales was seen starting on September 21st and peaked sharply about 24-48 hours prior to landfall (September 24-25). Demand, however, plummeted immediately on September 26th, which correlates with store closures, potential power loss, and mandatory sheltering.
 * The strongest correlations occurred at a 2-day lag, suggesting Walmart sales increased approximately two days before stronger winds and lower barometric pressure.
-* All 12 stores experienced substantial increases in sales, ranging from approximately 115.83% to 145.22%. The largest surge occurred at FL-330 in Miami, with a 145.22% increase, followed by FL-105 in Tampa (138.03%) and FL-619 in Tallahassee (137.75%). The smallest increase occurred at FL-239 in Orlando (115.83%).
+* All 12 stores experienced substantial increases in sales, ranging from approximately 125.05% to 173.00%. The largest surge occurred at FL-330 in Miami, with a 173.00% increase, followed by FL-619 in Tallahassee (160.05%) and FL-105 in Tampa (154.53%). The smallest increase occurred at FL-239 in Orlando (125.05%).
 * Even when removing lumped electronics, actual Board Games and Cards (Monopoly and playing cards) alone experienced a massive ~294% surge in daily sales, leaping from a baseline of ~ 1,100/ day to a peak of 4,337.52 on September 25th.
 * Emergency electronics (like portable chargers) and board games spike in tandem during the same pre-landfall window. 
 
