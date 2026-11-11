@@ -7,8 +7,8 @@
 
 ---
 ## How To Run
-* **Run in Google Colab**
-  * `notebooks/team_notebook.ipynb`
+* **Runs in Google Colab**
+  * In repository navigate to `notebooks/team_notebook.ipynb`
   * Click the **"Open in Colab"** badge at the top of `team_notebook.ipynb`
   * In Colab, select **Runtime -> Run all** from the top menu to execute all cells sequentially from top to bottom.
     * *Note on Data & APIs:* No manual file uploads or API keys are required. The notebook automatically loads all four datasets directly from this repository's `data/` directory and fetches historical weather data from the public Open-Meteo Archive API (internet access required).
