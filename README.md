@@ -6,12 +6,19 @@
 * Adeline Kwakye
 
 ---
+## How To Run
+* **Run in Google Colab**
+  * `notebooks/team_notebook.ipynb`
+  * Click the **"Open in Colab"** badge at the top of `team_notebook.ipynb`
+  * In Colab, select **Runtime -> Run all** from the top menu to execute all cells sequentially from top to bottom.
+    * *Note on Data & APIs:* No manual file uploads or API keys are required. The notebook automatically loads all four datasets directly from this repository's `data/` directory and fetches historical weather data from the public Open-Meteo Archive API (internet access required).
 
+---
 ## 1. Project Overview & Objective
 This project analyzes sales data from Walmart stores in Florida before and during Hurricane Helene. The goal is to clean and organize the transaction data, standardize product and store information, and identify which products and categories experienced the largest increases in demand. These findings would show how hurricanes affect shopping patterns and help stores better prepare for future disasters.
 
----
 
+---
 ## 2. Analysis Windows 
 * **Landfall:** Hurricane Helene landfall on **September 26, 2024**
 * **Baseline Window:** **September 1, 2024 – September 15, 2024 (15 days)**
@@ -55,5 +62,32 @@ All cleaning decisions were tracked through a decision log. The dataset was sani
 
 ## 5. Weather API
 To evaluate spatial vulnerability, store latitude and longitude coordinates were matched against historical weather observations using the **Open-Meteo Historical Weather API** (`https://archive-api.open-meteo.com/v1/archive`). Daily maximum wind speed and total precipitation were retrieved across Florida store locations for September 1–30, 2024.
+
+---
+## 6. Reflection 
+
+### 1. Data Quality Impact
+* **Issue & Resolution:** A specific data quality issue that we encountered was inconsistent category names with unstandardized formatting (for example, `'breakfastfoods'` vs. `'breakfast'`). Despite these representing the exact same product group, spelling differences caused them to be counted as separate categories. To address this, we implemented explicit category remapping and text normalization dictionaries. Consolidating these fragmented transactions revealed that `breakfast` had the highest relative surge (**+415.4%**), while `emergency` (**+$5,720.42/day**) and `entertainment` (**+$4,455.05/day**) dominated total daily sales.
+* **Impact of Leaving Data Uncleaned:** If we had grouped the data without category consolidation, our Top 5 surging categories would have been inaccurate. `Breakfast`—which appeared in four different ways—would have occupied four of the Top 5 spots instead of appearing once as a single consolidated category. This fragmentation distorts true category rankings, lowers daily averages, and masks the true **5.15x** surge multiple.
+
+### 2. ETL Tradeoffs
+* **Current Decision:** In our pipeline, we chose to drop all transactions that had null or unparseable timestamps (affecting **884 rows** out of 25,532).
+* **Alternative Approach & Risk:** Instead of discarding these 884 transactions, we could have assigned missing records to the overall store-level median date or categorized them under a special `"unknown date"` bin for aggregated analysis. By discarding 884 transactions entirely, we underestimated overall sales volume by approximately **3.5%**. If those missing timestamps occurred disproportionately during the high-velocity pre-landfall period (September 19–25), our calculation of peak demand may have been deflated. Imputing with a store-level median would retain overall sales volume and allow us to adjust the surge window accordingly.
+
+### 3. Pipeline Trust
+* **Garbage In, Garbage Out:** We agree with the Walmart CDO—the algorithm will process whatever input it receives without warning you whether the input is accurate. Throughout this project, our core findings (such as the **5.15x** surge multiple) depended entirely on cleaning the data before building any model or summary table. Without thorough standardization, downstream outputs are neither accurate nor representative of true retail behavior.
+* **Most Fragile Pipeline Component:** The most fragile part of our pipeline was inconsistent SKU and product-name string fragmentation. A major portion of our cleaning process involved identifying naming variations (such as multiple versions of *Strawberry Pop-Tarts*) and standardizing them while preserving physical unit quantities. If the consolidation step accidentally dropped or duplicated rows during remapping, it would distort unit counts and misrepresent inventory—leading to stockouts of critical goods or over-allocation of low-demand items during a crisis.
+
+### 4. Business vs. Data
+* **Statistical Finding vs. Inventory Risk:** After separating out lumped electronics (Roku sticks and portable chargers), our data still showed an impressive **~294% surge** in analog board games and playing cards. However, board games are traditionally low-velocity, high-cube items; over-stocking them ahead of a storm risks tying up shelf space and capital in inventory that may sit unsold for months if the storm shifts or power isn't lost.
+* **Mitigation Strategy:** To balance statistical evidence with business risk, we proposed a **cross-merchandising "Power Outage Preparedness" endcap**, positioning slow-moving analog games directly next to high-velocity emergency electronics (such as portable chargers). This places games alongside high-foot-traffic essentials, improving clearance odds without wasting dedicated aisle space.
+* **Value of Additional Data:** With store-specific inventory and stockout rate data, we could localize this recommendation—target-stocking only stores in high-probability power outage zones or regions with larger family demographics rather than applying a blanket increase across all 12 Florida stores.
+
+### 5. Team Collaboration
+* **Workflow & Future Iteration:** Our team divided the workload by assigning each member specific questions to research and analyze, allowing everyone to contribute equally and work efficiently. We also peer-reviewed one another's code and outputs to ensure accuracy, consistency, and quality throughout the project. Given an additional week, we would spend more time refining our statistical analysis, polishing visualizations, and exploring secondary trends to further strengthen our findings.
+* **Key Team Contributions:**
+  * **Vi:** Strong communication and adaptability across tasks.
+  * **Amilyn:** Strong dependability and collaborative execution.
+  * **Addie:** Proactive work ethic and deliverable ownership.
 
 
